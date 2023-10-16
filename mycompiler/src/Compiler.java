@@ -1,4 +1,5 @@
 import lexer.Lexer;
+import parser.Parser;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -17,7 +18,9 @@ public class Compiler {
             String content = new String(bytes, StandardCharsets.UTF_8);
             Lexer lexer = Lexer.getInstance(content);
             lexer.next();
-            lexer.display(output);
+            Parser parser = new Parser(lexer.getTokens());
+            parser.parse();
+            parser.display(output);
         } catch (IOException e){
             System.out.println("fail");
         }

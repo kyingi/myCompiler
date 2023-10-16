@@ -37,6 +37,7 @@ public class Token {
         Token.text = text;
     }
 
+
     public void setSynType(SynType synType) {
         this.synType = synType;
     }
@@ -47,6 +48,11 @@ public class Token {
 
     public String getName() {
         return name;
+    }
+
+    public boolean isSameType(SynType type)
+    {
+        return this.getSynType().equals(type);
     }
 
     @Override

@@ -36,6 +36,9 @@ public class Lexer {
         this.tokens = new ArrayList<>();
     }
 
+    public ArrayList<Token> getTokens() {
+        return tokens;
+    }
 
     public void next() {
         while (pos < content.length()) {
